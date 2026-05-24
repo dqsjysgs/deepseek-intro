@@ -52,7 +52,7 @@ onMounted(() => {
             {{ lang === 'zh' ? 'EN' : '中文' }}
           </button>
           <div class="nav-links">
-            <button v-for="(item, i) in t.nav" :key="i" @click="scrollToSection(['overview','features','models','benchmarks','try'][i])">
+            <button v-for="(item, i) in t.nav" :key="i" @click="scrollToSection(['overview','features','models','history','benchmarks','try'][i])">
               {{ item }}
             </button>
           </div>
@@ -126,6 +126,25 @@ onMounted(() => {
             <span class="model-tag" :style="{ background: m.color }">{{ m.tag }}</span>
           </div>
           <p class="model-desc">{{ m.desc }}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- History Timeline -->
+    <section id="history" class="history">
+      <div class="section-header">
+        <h2>{{ t.historySection.title }}</h2>
+        <p>{{ t.historySection.subtitle }}</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-line"></div>
+        <div v-for="(item, i) in t.timeline" :key="i" class="timeline-item" :class="{ left: i % 2 === 0, right: i % 2 !== 0 }">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">{{ item.date }}</span>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.desc }}</p>
+          </div>
         </div>
       </div>
     </section>
@@ -592,6 +611,103 @@ a {
   line-height: 1.8;
 }
 
+/* ========== Timeline ========== */
+.history {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+.timeline {
+  position: relative;
+  padding: 20px 0;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--primary), var(--green), transparent);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  margin-bottom: 48px;
+  opacity: 0;
+  animation: fadeInUp 0.6s forwards;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-item.left {
+  justify-content: flex-start;
+  padding-right: calc(50% + 40px);
+}
+
+.timeline-item.right {
+  justify-content: flex-end;
+  padding-left: calc(50% + 40px);
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 50%;
+  top: 24px;
+  width: 14px;
+  height: 14px;
+  background: var(--primary);
+  border: 3px solid var(--bg);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 12px rgba(108, 92, 231, 0.6);
+  z-index: 1;
+}
+
+.timeline-content {
+  background: var(--bg-card);
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: var(--radius);
+  padding: 24px;
+  position: relative;
+  transition: all 0.3s;
+  width: 100%;
+}
+
+.timeline-content:hover {
+  border-color: rgba(108, 92, 231, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(108, 92, 231, 0.1);
+}
+
+.timeline-date {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--primary);
+  background: rgba(108, 92, 231, 0.12);
+  padding: 3px 10px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.timeline-content h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.timeline-content p {
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
 /* ========== Benchmarks ========== */
 .benchmarks {
   max-width: 900px;
@@ -728,6 +844,21 @@ a {
 /* ========== Responsive ========== */
 @media (max-width: 768px) {
   .nav-links { display: none; }
+
+  .timeline-line {
+    left: 16px;
+  }
+
+  .timeline-item.left,
+  .timeline-item.right {
+    justify-content: flex-start;
+    padding-left: 48px;
+    padding-right: 0;
+  }
+
+  .timeline-dot {
+    left: 16px;
+  }
 
   .features-grid,
   .try-cards {

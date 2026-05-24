@@ -1,6 +1,6 @@
 export const messages = {
   zh: {
-    nav: ['概览', '特性', '模型', '评测', '体验'],
+    nav: ['概览', '特性', '模型', '发展历程', '评测', '体验'],
     hero: {
       badge: 'Vue 3 + Vite 驱动',
       title: '探索',
@@ -31,6 +31,19 @@ export const messages = {
       { tag: '旗舰模型', desc: '最新一代 MoE 大语言模型，在知识问答、长文本理解、代码生成、数学推理等全方位能力上达到国际顶尖水平。训练仅花费 278 万 H800 GPU 小时，成本效益极高。' },
       { tag: '推理专家', desc: '专注于深度推理的模型，采用强化学习训练，具备「思维链」能力。在数学竞赛、编程竞赛、科学推理等需要多步逻辑推导的场景中表现惊艳，媲美 OpenAI o1。' }
     ],
+    historySection: {
+      title: '发展历程',
+      subtitle: '从创立到引领 AI 浪潮，每一步都意义非凡'
+    },
+    timeline: [
+      { date: '2023.07', title: '深度求索成立', desc: '深度求索（DeepSeek）公司正式成立，由幻方量化孵化，专注于通用人工智能研究。' },
+      { date: '2023.11', title: 'DeepSeek Coder', desc: '发布首个代码大模型 DeepSeek Coder，在代码生成任务中展现出卓越能力，成为开发者社区的热门工具。' },
+      { date: '2024.01', title: 'DeepSeek LLM 67B', desc: '推出 DeepSeek LLM 67B 通用大模型，在多个基准测试中表现优异，标志着 DeepSeek 正式进入大模型竞技场。' },
+      { date: '2024.05', title: 'DeepSeek-V2 发布', desc: '采用混合专家（MoE）架构，以极低成本实现卓越性能，API 价格低至输入 1 元/百万 token，引发行业"价格战"。' },
+      { date: '2024.12', title: 'DeepSeek-V3 发布', desc: '671B 总参数的 MoE 模型，训练仅花费 278 万 H800 GPU 小时，性能对标 GPT-4o 和 Claude 3.5 Sonnet，震惊全球 AI 社区。' },
+      { date: '2025.01', title: 'DeepSeek-R1 发布', desc: '推出推理增强模型 R1，采用强化学习训练，数学和编程推理能力媲美 OpenAI o1，首次展示了纯 RL 训练推理能力的可行性。' },
+      { date: '2025.01', title: '登顶 App Store', desc: 'DeepSeek App 登顶美国及全球多个国家/地区 App Store 免费榜，超越 ChatGPT，成为中国 AI 应用出海的里程碑事件。' }
+    ],
     benchmarksSection: {
       title: '评测基准',
       subtitle: '在多个权威基准测试中达到世界领先水平',
@@ -52,7 +65,7 @@ export const messages = {
   },
 
   en: {
-    nav: ['Overview', 'Features', 'Models', 'Benchmarks', 'Try'],
+    nav: ['Overview', 'Features', 'Models', 'History', 'Benchmarks', 'Try'],
     hero: {
       badge: 'Powered by Vue 3 + Vite',
       title: 'Explore',
@@ -82,6 +95,19 @@ export const messages = {
     models: [
       { tag: 'Flagship', desc: 'Latest-generation MoE large language model, reaching world-class performance in knowledge Q&A, long-text comprehension, code generation, and mathematical reasoning. Trained with only 2.78M H800 GPU hours — extremely cost-effective.' },
       { tag: 'Reasoning Expert', desc: 'A model focused on deep reasoning, trained with reinforcement learning, featuring "chain of thought" capability. Stunning performance in math competitions, coding contests, and scientific reasoning scenarios requiring multi-step logical deduction — rivaling OpenAI o1.' }
+    ],
+    historySection: {
+      title: 'History',
+      subtitle: 'From founding to leading the AI revolution — every step counts'
+    },
+    timeline: [
+      { date: '2023.07', title: 'DeepSeek Founded', desc: 'DeepSeek was officially founded, incubated by High-Flyer, focusing on AGI research.' },
+      { date: '2023.11', title: 'DeepSeek Coder', desc: 'Released DeepSeek Coder, showcasing exceptional code generation capabilities and quickly becoming a favorite among developers.' },
+      { date: '2024.01', title: 'DeepSeek LLM 67B', desc: 'Launched DeepSeek LLM 67B, a general-purpose model achieving strong results across benchmarks, marking DeepSeek\'s entry into the LLM arena.' },
+      { date: '2024.05', title: 'DeepSeek-V2 Released', desc: 'Adopted Mixture of Experts (MoE) architecture, delivering outstanding performance at ultra-low cost. API pricing at ¥1 per million tokens triggered an industry price war.' },
+      { date: '2024.12', title: 'DeepSeek-V3 Released', desc: 'A 671B parameter MoE model trained with only 2.78M H800 GPU hours, matching GPT-4o and Claude 3.5 Sonnet — sending shockwaves through the global AI community.' },
+      { date: '2025.01', title: 'DeepSeek-R1 Released', desc: 'Launched R1, a reasoning-enhanced model trained via reinforcement learning, rivaling OpenAI o1 in math and coding. First to demonstrate the viability of pure RL-trained reasoning.' },
+      { date: '2025.01', title: 'Topped App Store', desc: 'DeepSeek App hit #1 on the US and global App Store free charts, surpassing ChatGPT — a landmark moment for Chinese AI applications going global.' }
     ],
     benchmarksSection: {
       title: 'Benchmarks',
